@@ -1,8 +1,9 @@
+import java.util.ArrayList;
+
 public class Kelas {
-    String kodeKelas;
-    String namaKelas;
-    String pengajar;
-    double harga;
+    private String kodeKelas, namaKelas, pengajar;
+    private double harga;
+    private ArrayList<Siswa> daftarSiswa = new ArrayList<>();
 
     public Kelas(String kodeKelas, String namaKelas, String pengajar, double harga) {
         this.kodeKelas = kodeKelas;
@@ -11,19 +12,15 @@ public class Kelas {
         this.harga = harga;
     }
 
-    public String getKodeKelas() {
-        return kodeKelas;
-    }
+    public String getKodeKelas() { return kodeKelas; }
+    public String getNamaKelas() { return namaKelas; }
+    public String getPengajar() { return pengajar; }
+    public double getHarga() { return harga; }
+    public ArrayList<Siswa> getDaftarSiswa() { return daftarSiswa; }
 
-    public String getNamaKelas() {
-        return namaKelas;
-    }
-
-    public String getPengajar() {
-        return pengajar;
-    }
-
-    public double getHarga() {
-        return harga;
+    public void tambahSiswa(Siswa siswa) {
+        if (!daftarSiswa.contains(siswa)) {
+            daftarSiswa.add(siswa);
+        }
     }
 }
